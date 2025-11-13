@@ -1,15 +1,19 @@
-require("dotenv").config();
-const { Client, GatewayIntentBits } = require("discord.js");
-const {
+import "dotenv/config.js";
+import { Client, GatewayIntentBits } from "discord.js";
+import {
   joinVoiceChannel,
   createAudioPlayer,
   createAudioResource,
   AudioPlayerStatus,
   entersState,
   VoiceConnectionStatus,
-} = require("@discordjs/voice");
-const path = require("path");
-const fs = require("fs");
+} from "@discordjs/voice";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const TOKEN = process.env.TOKEN;
 const GUILD_ID = process.env.GUILD_ID;
